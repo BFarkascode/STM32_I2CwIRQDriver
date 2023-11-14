@@ -1,6 +1,8 @@
 # STM32_I2CwIRQDriver
 Bare metal non blocking (!) master driver for I2C in STM32_L0x3.
 
+We use the BMP280 again and we need an oscilloscope too to check the I2C bus out.
+
 I implied in my regular I2C driver project that it is possible to make a better driver using IRQs and thus avoid blocking "delay" commands in the code. Well, that turned out to be more complex than I initally estimated, so here we go...
 
 Problems
@@ -32,6 +34,10 @@ The result is an I2C driver that has no hard delays and works in a pretty much f
 Another benefit is that it can daisy-chain Tx and Rx after each other without any delay between the two.
 
 Also, putting a scope probe on the I2C bus adds a lot of noise!
+
+BMP280 readout goes as before.
+
+Tx test shows that we have a long data transfer but the printf command does not interrupt it (we do the I2C coms WHILE(!) we are doing the printf). On the scope, we should see the BMP280's address sent over, followed by a counter from 0x1 to 0x5.
 
 
 
