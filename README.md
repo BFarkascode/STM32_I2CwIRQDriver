@@ -28,3 +28,10 @@ For a readout, we send first the address as Tx follwoed by an Rx.
 
 
 
+The result is an I2C driver that has no hard delays and works in a pretty much fire-and-forget manner. Once the function is called, it will be gradually and fully executed whenever the cpu is around to do it and the bus is free..
+Another benefit is that it can daisy-chain Tx and Rx after each other without any delay between the two.
+
+Also, putting a scope probe on the I2C bus adds a lot of noise!
+
+
+
