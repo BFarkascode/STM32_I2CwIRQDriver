@@ -15,15 +15,9 @@ Of note, we use the BMP280 again and we need an oscilloscope too to check the I2
 
 ### Problems…problems…
 So, with the general what-the-hell-are-we-doing-here out of the way, what are the problems that are coming right at us?
-1)	Flag and IRQ generation
-Observing how the IRQs are triggered in the I2C peripheral, I only have one word of it: PAIN! They aren't generated when something is acknowledged but when the Tx and Rx buffers are in a certain state or when we have start and stop bits on the bus. This is not convenient at all since it impedes our capacity to daisy-chain activities when the timing is right. Similarly, we don’t have a flag when an ACK is generated or received but only when an ACK is missed, that is, when we have a NACK. (Ideal timing would be to have something always after an ACK to keep on loading the driver.)
+1)	Flag and IRQ generation: Observing how the IRQs are triggered in the I2C peripheral, I only have one word of it: PAIN! They aren't generated when something is acknowledged but when the Tx and Rx buffers are in a certain state or when we have start and stop bits on the bus. This is not convenient at all since it impedes our capacity to daisy-chain activities when the timing is right. Similarly, we don’t have a flag when an ACK is generated or received but only when an ACK is missed, that is, when we have a NACK. (Ideal timing would be to have something always after an ACK to keep on loading the driver.)
 
-2)	Overruns and data loss
-If we remove any blocking delays, we may be executing our driver code again even before we have executed it a previous time. It can be a major problem if we execute our driver faster than the bus can react since:
-- we have an overruns where an existing Tx buffer state might be replaced
-- we have data loss where an empty Rx buffer is captured
-- we can corrupt the ongoing I2C run by modifying the drive setup
-Just for reference, we have our I2C driver running in fast mode at 400 kHz while our L0x3 can clock a hundred times faster at 32 MHz.
+2)	Overruns and data loss: If we remove any blocking delays, we may be executing our driver code again even before we have executed it a previous time. It can be a major problem if we execute our driver faster than the bus can react since we have an overruns where an existing Tx buffer state might be replaced;, we have data loss where an empty Rx buffer is captured and we can corrupt the ongoing I2C run by modifying the drive setup. Just for reference, we have our I2C driver running in fast mode at 400 kHz while our L0x3 can clock a hundred times faster at 32 MHz.
 
 3)	Tx and Rx timing
 When we want to do a readout, the process is to send the desired registers value as Tx to the sensor which is then followed by an Rx. Imagine that we want to read out a whole bunch of registers that aren’t neighbouring each other (so we can’t let the driver automatically increase the address): in this case, we absolutely must execute our driver in pairs with a Tx followed by a Rx, or we risk reading out the wrong values.
