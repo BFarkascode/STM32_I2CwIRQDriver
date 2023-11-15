@@ -1,7 +1,7 @@
 /*
  * I2CwIRQDriver_STM32L0x3.c			v.1.0
  *
- *  Created on: 03 Nov 2023
+ *  Created on: 14 Nov 2023
  *      Author: Balazs Farkas
  *
  */
@@ -384,7 +384,8 @@ void I2C1_IRQHandler (void) {
 
 		if (Tx_number_of_bytes > 0) {
 
-				I2C1->TXDR = (volatile uint8_t) *bytes_to_send_ptr++;					//we load the byte and thus will have TXIS LOW until the data byte is cleared				Tx_number_of_bytes--;
+				I2C1->TXDR = (volatile uint8_t) *bytes_to_send_ptr++;					//we load the byte and thus will have TXIS LOW until the data byte is cleared
+				Tx_number_of_bytes--;
 
 		} else {
 
