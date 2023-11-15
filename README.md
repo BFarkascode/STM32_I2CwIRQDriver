@@ -25,7 +25,7 @@ When we want to do a readout, the process is to send the desired registers value
 +1) DMA and TIM
 As mentioned above, no DMA, no TIM for us this time.
 
-###What do we want then?
+### What do we want then?
 To summarize, what we want is a recurringly executed I2C coms block that evolves itself gradually only when the bus is available. We don’t want blocking delays in there, no DMA and no TIM. By all intents and purposes, it should be fire-and-forget.
 
 ## Previous relevant projects
