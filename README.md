@@ -19,11 +19,9 @@ So, with the general what-the-hell-are-we-doing-here out of the way, what are th
 
 2)	Overruns and data loss: If we remove any blocking delays, we may be executing our driver code again even before we have executed it a previous time. It can be a major problem if we execute our driver faster than the bus can react since we have an overruns where an existing Tx buffer state might be replaced;, we have data loss where an empty Rx buffer is captured and we can corrupt the ongoing I2C run by modifying the drive setup. Just for reference, we have our I2C driver running in fast mode at 400 kHz while our L0x3 can clock a hundred times faster at 32 MHz.
 
-3)	Tx and Rx timing
-When we want to do a readout, the process is to send the desired registers value as Tx to the sensor which is then followed by an Rx. Imagine that we want to read out a whole bunch of registers that aren’t neighbouring each other (so we can’t let the driver automatically increase the address): in this case, we absolutely must execute our driver in pairs with a Tx followed by a Rx, or we risk reading out the wrong values.
+3)	Tx and Rx timing: When we want to do a readout, the process is to send the desired registers value as Tx to the sensor which is then followed by an Rx. Imagine that we want to read out a whole bunch of registers that aren’t neighbouring each other (so we can’t let the driver automatically increase the address): in this case, we absolutely must execute our driver in pairs with a Tx followed by a Rx, or we risk reading out the wrong values.
 
-+1) DMA and TIM
-As mentioned above, no DMA, no TIM for us this time.
++1) DMA and TIM: As mentioned above, no DMA, no TIM for us this time.
 
 ### What do we want then?
 To summarize, what we want is a recurringly executed I2C coms block that evolves itself gradually only when the bus is available. We don’t want blocking delays in there, no DMA and no TIM. By all intents and purposes, it should be fire-and-forget.
