@@ -1,5 +1,11 @@
 /* USER CODE BEGIN Header */
 /**
+ *  Project: STM32_I2CwIRQDriver
+ *  File: main.h
+ *  Author: BalazsFarkas
+ *  Processor: STM32L053R8
+ *  Compiler: ARM-GCC (STM32 IDE)
+ *  Program version: 1.0
   ******************************************************************************
   * @file           : main.h
   * @brief          : Header for main.c file.
