@@ -1,7 +1,7 @@
 /*
  *
  *  Created on: 14 Nov 2023
- *  Project: STM32_I2CDriver
+ *  Project: STM32_I2CwIRQDriver
  *  File: I2CwIRQDriver_STM32L0x3.h
  *  Author: BalazsFarkas
  *  Processor: STM32L053R8
