@@ -1,5 +1,17 @@
 
 /**
+ *  Project: STM32_I2CwIRQDriver
+ *  File: main.c
+ *  Author: BalazsFarkas
+ *  Processor: STM32L053R8
+ *  Compiler: ARM-GCC (STM32 IDE)
+ *  Program version: 1.0
+ *  Program description: N/A
+ *  Hardware description/pin distribution: N/A
+ *  Modified from: I2CDriver_STM32L0x3/main.c
+ *  Change history: N/A
+
+
   ******************************************************************************
   * @file           : main.c
   * @brief          : Main program body
