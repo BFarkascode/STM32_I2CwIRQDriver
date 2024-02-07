@@ -7,7 +7,6 @@
  *  Processor: STM32L053R8
  *  Compiler: ARM-GCC (STM32 IDE)
  *  Program version: 1.0
- *  Modified from: N/A
  *  Change history: 
  *
  *v.1.0.mod
