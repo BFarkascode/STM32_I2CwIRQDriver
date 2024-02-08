@@ -1,11 +1,14 @@
 /* USER CODE BEGIN Header */
 /**
- *  Project: STM32_I2CwIRQDriver
- *  File: main.h
  *  Author: BalazsFarkas
+ *  Project: STM32_I2CwIRQDriver
  *  Processor: STM32L053R8
  *  Compiler: ARM-GCC (STM32 IDE)
- *  Program version: 1.0
+ *  Header version: 1.0
+ *  File: main.c
+ *  Hardware description/pin distribution: I2C pins on PB8 and PB9
+ *  Modified from: None
+ *  Change history: N/A
   ******************************************************************************
   * @file           : main.h
   * @brief          : Header for main.c file.
