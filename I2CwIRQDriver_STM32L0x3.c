@@ -1,17 +1,12 @@
 /*
- *
  *  Created on: 14 Nov 2023
- *  Project: STM32_I2CwIRQDriver
- *  File: I2CwIRQDriver_STM32L0x3.c
  *  Author: BalazsFarkas
+ *  Project: STM32_I2CwIRQDriver
  *  Processor: STM32L053R8
  *  Compiler: ARM-GCC (STM32 IDE)
  *  Program version: 1.0
- *  Program description: N/A
- *  Hardware description/pin distribution: N/A
- *  Modified from: I2CDriver_STM32L0x3.c
- *  Change history: N/A
- *
+ *  File: I2CwIRQDriver_STM32L0x.c
+ *  Modified from: I2CDriver_STM32L0x3/I2CDriver_STM32L0x3.c
  */
 
 
