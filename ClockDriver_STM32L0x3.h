@@ -6,7 +6,7 @@
  *  Compiler: ARM-GCC (STM32 IDE)
  *  Header version: 1.0
  *  File: ClockDriver_STM32L0x3.h
- *  Modified from: I2CDriver_STM32L0x3/ClockDriver_STM32L0x3.h
+ *  Modified from: STM32_I2CDriver/ClockDriver_STM32L0x3.h
  */
 
 #ifndef INC_RCCTIMPWMDELAY_CUSTOM_H_
