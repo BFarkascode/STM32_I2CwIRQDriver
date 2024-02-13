@@ -7,7 +7,7 @@
  *  Compiler: ARM-GCC (STM32 IDE)
  *  Program version: 1.0
  *  File: ClockDriver_STM32L0x3.c
- *  Modified from: I2CDriver_STM32L0x3/ClockDriver_STM32L0x3.c
+ *  Modified from: STM32_I2CDriver/ClockDriver_STM32L0x3.c
  *  Change history: 
  *
  *v.1.0.mod
