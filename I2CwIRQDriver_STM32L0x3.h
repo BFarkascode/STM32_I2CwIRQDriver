@@ -6,7 +6,7 @@
  *  Compiler: ARM-GCC (STM32 IDE)
  *  Header version: 1.0
  *  File: I2CwIRQDriver_STM32L0x.h
- *  Modified from: I2CDriver_STM32L0x3/I2CDriver_STM32L0x3.h
+ *  Modified from: STM32_I2CDriver/I2CDriver_STM32L0x3.h
  */
 
 #ifndef INC_I2CDRIVER_CUSTOM_H_
